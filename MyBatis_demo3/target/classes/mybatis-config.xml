@@ -6,10 +6,13 @@
 
     <properties resource="jdbc.properties"></properties>
 
-<!--    将下划线自动映射为驼峰：emp_name:empName-->
     <settings>
+        <!--    将下划线自动映射为驼峰：emp_name:empName-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--    开启延迟加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
     </settings>
+
 
     <typeAliases>
         <package name="com.atguigu.mybatis.pojo"/>

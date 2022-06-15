@@ -37,6 +37,7 @@ public class ResultMapTest {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         Emp emp =mapper.getEmpAndDeptByStepOne(1);
-        System.out.println(emp);
+        //可以开启懒加载之后  只执行第一步  没有执行第二步
+        System.out.println(emp.getEmpName());
     }
 }
