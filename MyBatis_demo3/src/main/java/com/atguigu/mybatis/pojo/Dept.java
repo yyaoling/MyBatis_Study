@@ -1,8 +1,28 @@
 package com.atguigu.mybatis.pojo;
 
+import java.util.List;
+
 public class Dept {
     private Integer did;
     private String deptName;
+    private List<Emp> emps;
+
+    public List<Emp> getEmps() {
+        return emps;
+    }
+
+    @Override
+    public String toString() {
+        return "Dept{" +
+                "did=" + did +
+                ", deptName='" + deptName + '\'' +
+                ", emps=" + emps +
+                '}';
+    }
+
+    public void setEmps(List<Emp> emps) {
+        this.emps = emps;
+    }
 
     public String getDeptName() {
         return deptName;
@@ -20,11 +40,4 @@ public class Dept {
         this.did = did;
     }
 
-    @Override
-    public String toString() {
-        return "Dept{" +
-                "did=" + did +
-                ", deptName='" + deptName + '\'' +
-                '}';
-    }
 }

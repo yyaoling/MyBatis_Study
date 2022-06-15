@@ -1,4 +1,6 @@
+import com.atguigu.mybatis.mapper.DeptMapper;
 import com.atguigu.mybatis.mapper.EmpMapper;
+import com.atguigu.mybatis.pojo.Dept;
 import com.atguigu.mybatis.pojo.Emp;
 import com.atguigu.mybatis.utils.SqlSessionUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -39,5 +41,17 @@ public class ResultMapTest {
         Emp emp =mapper.getEmpAndDeptByStepOne(1);
         //可以开启懒加载之后  只执行第一步  没有执行第二步
         System.out.println(emp.getEmpName());
+    }
+
+    /**
+     * collection处理一对多查询
+     */
+    @Test
+    public void testGetDeptAndEmp(){
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+        Dept dept = mapper.getDeptAndEmp(1);
+        System.out.println(dept);
+
     }
 }
