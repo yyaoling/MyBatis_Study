@@ -54,4 +54,16 @@ public class ResultMapTest {
         System.out.println(dept);
 
     }
+
+    /**
+     * 分步查询处理一对多查询
+     */
+    @Test
+    public void testGetDeptAndEmpByStep(){
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+        Dept dept = mapper.getDeptAndEmpByStepOne(1);
+        System.out.println(dept);
+
+    }
 }
