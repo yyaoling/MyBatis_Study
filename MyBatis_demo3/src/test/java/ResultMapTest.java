@@ -29,13 +29,14 @@ public class ResultMapTest {
      * association处理多对一的映射关系
      * property：需要处理多对一的映射关系的属性名
      * javaType 该属性 的类型
+     * 3.通过分布查询解决多对一的映射关系
      */
     @Test
     public void testGetEmpAndDept()
     {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
-        Emp emp =mapper.getEmpAndDept(1);
+        Emp emp =mapper.getEmpAndDeptByStepOne(1);
         System.out.println(emp);
     }
 }

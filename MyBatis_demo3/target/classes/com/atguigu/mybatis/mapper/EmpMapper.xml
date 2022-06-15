@@ -43,4 +43,21 @@
     <select id="getEmpAndDept" resultMap="empAndDeptResultMapTwo">
         select * from t_emp left join t_dept on t_emp.did = t_dept.did where t_emp.eid = #{eid}
     </select>
+
+<!--    分布查询-->
+    <resultMap id="empAndDeptByStepResultMap" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <result property="email" column="email"></result>
+        <association property="dept"
+                     select="com.atguigu.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo"
+                     column="did"
+                     ></association>
+    </resultMap>
+    <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">
+        select * from t_emp where eid = #{eid}
+    </select>
 </mapper>
