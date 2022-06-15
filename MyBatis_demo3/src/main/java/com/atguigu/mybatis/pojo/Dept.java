@@ -2,7 +2,15 @@ package com.atguigu.mybatis.pojo;
 
 public class Dept {
     private Integer did;
-    private String depeName;
+    private String deptName;
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
 
     public Integer getDid() {
         return did;
@@ -12,19 +20,11 @@ public class Dept {
         this.did = did;
     }
 
-    public String getDepeName() {
-        return depeName;
-    }
-
-    public void setDepeName(String depeName) {
-        this.depeName = depeName;
-    }
-
     @Override
     public String toString() {
         return "Dept{" +
                 "did=" + did +
-                ", depeName='" + depeName + '\'' +
+                ", deptName='" + deptName + '\'' +
                 '}';
     }
 }
