@@ -3,10 +3,18 @@ package com.atguigu.mybatis.pojo;
 public class Emp {
     private Integer eid;
     private String empName;
-    private String age;
+    private Integer age;
     private String sex;
     private String email;
     private Dept dept;
+
+    public Emp(Integer eid, String empName, Integer age, String sex, String email) {
+        this.eid = eid;
+        this.empName = empName;
+        this.age = age;
+        this.sex = sex;
+        this.email = email;
+    }
 
     @Override
     public String toString() {
@@ -18,6 +26,14 @@ public class Emp {
                 ", email='" + email + '\'' +
                 ", dept=" + dept +
                 '}';
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public Dept getDept() {
@@ -44,13 +60,6 @@ public class Emp {
         this.empName = empName;
     }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
 
     public String getSex() {
         return sex;
